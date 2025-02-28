@@ -10,12 +10,63 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+            var vehicles = new List<Vehicle>();
+
+            var car1 = new Car() { 
+                HasTrunk = true, 
+                Year = "1971",
+                Make = "Ford",
+                Model = "F100"
+
+            };
+            var motorcycle1 = new Motorcycle() { 
+                HasSideSeat = true,
+                Year = "1994",
+                Make = "Ducati",
+                Model = "916"
+            };
+            Vehicle vehicle1 = new Car() { 
+                Year = "1992",
+                HasTrunk = true,
+                Make = "Astin",
+                Model = "Martin"
+
+            };
+            Vehicle vehicle2 = new Motorcycle()
+            {
+                Make = "Indian",
+                Model = "101 Scout",
+                Year = "1928",
+                HasSideSeat = true
+            };
+            
+
+            vehicles.Add(vehicle1);
+            vehicles.Add(vehicle2);
+            vehicles.Add(car1);
+            vehicles.Add(motorcycle1);
+
+            foreach (var vehicle in vehicles)
+            {
+                Console.WriteLine($"Year: {vehicle.Year}");
+                Console.WriteLine($"Make: {vehicle.Make}");
+                Console.WriteLine($"Model:{vehicle.Model}");
+                Console.WriteLine();
+                vehicle.DriveVirtual();
+                vehicle.DriveAbstract();
+                Console.WriteLine();
+            }
+
+
             /*
              * Todo: Follow all comments!! 
              * Double click on the region (gray box) to view all comments
              */
 
-            #region Vehicles
+            
+
+
+
 
             /*
              * Create an abstract class called Vehicle
@@ -47,8 +98,9 @@ namespace ConsoleUI
 
             // Call each of the drive methods for one car and one motorcycle
 
-            #endregion            
-            Console.ReadLine();
+
+
+            
         }
     }
 }
